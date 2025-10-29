@@ -1,0 +1,170 @@
+<!-- banner_cosmic.svg
+     Ultra-detailed cosmic hero banner (1200 x 360)
+     Save as ./banner_cosmic.svg and reference from README.md: ![banner](./banner_cosmic.svg)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- gradients -->
+    <linearGradient id="spaceGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#060710"/>
+      <stop offset="0.25" stop-color="#081226"/>
+      <stop offset="0.55" stop-color="#0b1630"/>
+      <stop offset="1" stop-color="#061021"/>
+    </linearGradient>
+
+    <radialGradient id="nebulaA" cx="30%" cy="30%" r="60%">
+      <stop offset="0" stop-color="#00d5c3" stop-opacity="0.28"/>
+      <stop offset="0.25" stop-color="#00bfa6" stop-opacity="0.18"/>
+      <stop offset="0.6" stop-color="#006b9a" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="nebulaB" cx="75%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#7a5cff" stop-opacity="0.26"/>
+      <stop offset="0.25" stop-color="#4c8bff" stop-opacity="0.12"/>
+      <stop offset="0.6" stop-color="#00122a" stop-opacity="0.03"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="planetGrad" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffcd9a"/>
+      <stop offset="0.45" stop-color="#f0a06c"/>
+      <stop offset="1" stop-color="#c0532b"/>
+    </linearGradient>
+
+    <!-- star sparkle -->
+    <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="0.35" stop-color="#bfeef0" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- subtle grain (using pattern of small circles) -->
+    <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="0.6" fill="rgba(255,255,255,0.02)"/>
+    </pattern>
+
+    <!-- glass blur filter -->
+    <filter id="glassBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+    </filter>
+
+    <!-- inner glow for planet -->
+    <filter id="planetInner" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="g"/>
+      <feComposite in="SourceGraphic" in2="g" operator="over"/>
+    </filter>
+
+    <!-- tiny star defs -->
+    <g id="smallStar">
+      <circle cx="0" cy="0" r="1.1" fill="#ffffff"/>
+    </g>
+
+    <g id="longStar">
+      <rect x="-0.6" y="-4.5" width="1.2" height="9" rx="0.6" fill="#ffffff" opacity="0.9"/>
+    </g>
+
+  </defs>
+
+  <!-- background space gradient -->
+  <rect width="1200" height="360" rx="14" fill="url(#spaceGrad)"/>
+
+  <!-- layered nebula glow shapes (soft) -->
+  <g opacity="0.95">
+    <ellipse cx="340" cy="140" rx="420" ry="120" fill="url(#nebulaA)" />
+    <ellipse cx="880" cy="120" rx="480" ry="140" fill="url(#nebulaB)" transform="rotate(-18 880 120)"/>
+  </g>
+
+  <!-- subtle speckled dust / grain -->
+  <rect width="1200" height="360" fill="url(#grain)" opacity="0.14"/>
+
+  <!-- many tiny stars (distributed) -->
+  <g id="starfield" opacity="0.95">
+    <!-- manually placed stars for composition (mix of sizes) -->
+    <use href="#smallStar" x="60" y="30" transform="scale(0.9)"/>
+    <use href="#smallStar" x="110" y="60" transform="scale(0.8)"/>
+    <use href="#smallStar" x="200" y="22" transform="scale(1.2)"/>
+    <use href="#smallStar" x="260" y="90" transform="scale(0.6)"/>
+    <use href="#smallStar" x="360" y="42" transform="scale(1.1)"/>
+    <use href="#smallStar" x="420" y="72" transform="scale(0.7)"/>
+    <use href="#smallStar" x="520" y="24" transform="scale(0.85)"/>
+    <use href="#smallStar" x="640" y="68" transform="scale(0.7)"/>
+    <use href="#smallStar" x="740" y="40" transform="scale(1.25)"/>
+    <use href="#smallStar" x="820" y="18" transform="scale(0.6)"/>
+    <use href="#smallStar" x="920" y="86" transform="scale(0.9)"/>
+    <use href="#smallStar" x="1010" y="54" transform="scale(0.7)"/>
+    <use href="#smallStar" x="1120" y="26" transform="scale(1.0)"/>
+    <!-- a few long streak stars -->
+    <use href="#longStar" x="185" y="130" transform="rotate(12) scale(0.9)" opacity="0.7"/>
+    <use href="#longStar" x="960" y="150" transform="rotate(-18) scale(0.8)" opacity="0.6"/>
+    <use href="#longStar" x="540" y="200" transform="rotate(6) scale(0.7)" opacity="0.5"/>
+  </g>
+
+  <!-- large planet with ring on right -->
+  <g transform="translate(920,200)">
+    <!-- planetary shadow circle -->
+    <circle cx="0" cy="0" r="86" fill="url(#planetGrad)" stroke="#000000" stroke-opacity="0.18" />
+    <!-- subtle top-light -->
+    <ellipse cx="-22" cy="-28" rx="42" ry="20" fill="rgba(255,255,255,0.07)"/>
+    <!-- planet texture: soft radial noise via blurred circles -->
+    <g filter="url(#planetInner)" opacity="0.95">
+      <circle cx="-18" cy="6" r="6" fill="rgba(255,255,255,0.03)"/>
+      <circle cx="22" cy="-6" r="8" fill="rgba(255,255,255,0.02)"/>
+      <circle cx="6" cy="20" r="5" fill="rgba(0,0,0,0.08)"/>
+    </g>
+    <!-- ring -->
+    <ellipse cx="0" cy="12" rx="170" ry="34" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="8" transform="rotate(-22)"/>
+    <ellipse cx="0" cy="12" rx="170" ry="34" fill="none" stroke="rgba(13,191,166,0.09)" stroke-width="4" transform="rotate(-22)"/>
+  </g>
+
+  <!-- mid-left secondary planet faint -->
+  <g transform="translate(180,240) scale(0.6)">
+    <circle cx="0" cy="0" r="56" fill="#10243a" opacity="0.92" />
+    <circle cx="-10" cy="-8" r="16" fill="rgba(255,255,255,0.02)"/>
+  </g>
+
+  <!-- subtle milky stream across -->
+  <path d="M-40 200 C 120 60, 420 40, 600 120 C 820 200, 980 230, 1240 160" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="48" stroke-linecap="round"/>
+
+  <!-- glass profile card (center-left) -->
+  <g transform="translate(64,48)">
+    <!-- glass rounded rect -->
+    <rect x="0" y="0" width="740" height="260" rx="18" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.06)" />
+    <!-- inner glossy highlight -->
+    <rect x="0" y="0" width="740" height="90" rx="18" fill="rgba(255,255,255,0.02)"/>
+    <!-- name -->
+    <text x="28" y="78" font-family="Inter, Roboto, Arial, sans-serif" font-size="34" fill="#e9fbf6" font-weight="700">Goutam Kumar</text>
+    <!-- subtitle / role -->
+    <text x="28" y="112" font-family="Inter, Roboto, Arial, sans-serif" font-size="15" fill="#b9dfe0">DevOps & Cloud Engineer · Software Engineer</text>
+
+    <!-- contact row -->
+    <g transform="translate(28,138)" font-family="Inter, Roboto, Arial, sans-serif" font-size="13" fill="#9fbfc0">
+      <text x="0" y="0">Bangalore · India</text>
+      <text x="220" y="0">goutamdhanai@gmail.com</text>
+      <text x="540" y="0">+91 9024378271</text>
+    </g>
+
+    <!-- small button badges -->
+    <g transform="translate(28,178)">
+      <rect x="0" y="0" rx="8" width="170" height="36" fill="#071b1b" stroke="#008f85" stroke-opacity="0.12"/>
+      <text x="18" y="24" font-family="Inter, Roboto, Arial, sans-serif" font-size="13" fill="#00d5c3">🌐 goutamdhanani.netlify.app</text>
+
+      <rect x="200" y="0" rx="8" width="170" height="36" fill="#071b1b" stroke="#6b82ff" stroke-opacity="0.12"/>
+      <text x="220" y="24" font-family="Inter, Roboto, Arial, sans-serif" font-size="13" fill="#90a6ff">GitHub · Goutamdhanani</text>
+    </g>
+
+    <!-- tagline small -->
+    <text x="28" y="230" font-family="Inter, Roboto, Arial, sans-serif" font-size="12" fill="#92bfc0">
+      Building automated CI/CD pipelines • Kubernetes • Terraform • Secure cloud platforms
+    </text>
+  </g>
+
+  <!-- tiny subtle vignette -->
+  <rect width="1200" height="360" rx="14" fill="url(#spaceGrad)" opacity="0.06"/>
+
+  <!-- decorative star sparkle in top-right -->
+  <g transform="translate(1070,40)">
+    <circle cx="0" cy="0" r="6" fill="url(#starGlow)" opacity="0.95"/>
+    <rect x="-0.6" y="-22" width="1.2" height="44" rx="0.6" fill="rgba(255,255,255,0.6)" transform="rotate(12)"/>
+  </g>
+</svg>
