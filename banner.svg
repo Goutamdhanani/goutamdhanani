@@ -1,0 +1,54 @@
+<!-- banner.svg: Glassy header for README -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#081015"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0db7b0"/>
+      <stop offset="100%" stop-color="#00a89a"/>
+    </linearGradient>
+    <filter id="f1" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feBlend in="SourceGraphic" in2="b"/>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="300" rx="24" fill="url(#g1)" />
+
+  <!-- glass card -->
+  <g filter="url(#f1)">
+    <rect x="40" y="30" width="1120" height="240" rx="18" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" />
+    <rect x="40" y="30" width="1120" height="240" rx="18" fill="url(#g1)" opacity="0.06"/>
+  </g>
+
+  <!-- accent stripe -->
+  <rect x="56" y="46" width="8" height="208" rx="4" fill="url(#g2)" />
+
+  <!-- Name -->
+  <text x="86" y="100" font-family="Inter, Helvetica, Arial, sans-serif" font-size="36" fill="#ffffff" font-weight="700">Goutam Kumar</text>
+
+  <!-- Subtitle -->
+  <text x="86" y="140" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="#cbd5e1">DevOps • Cloud Engineer • Software Engineer</text>
+
+  <!-- Location & contact -->
+  <text x="86" y="170" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" fill="#9aa5b1">Bangalore · India</text>
+  <text x="320" y="170" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" fill="#9aa5b1">goutamdhanai@gmail.com · +91 9024378271</text>
+
+  <!-- links (icons simplified as dots) -->
+  <g transform="translate(86,200)">
+    <circle cx="0" cy="0" r="6" fill="#00a89a"/>
+    <text x="18" y="4" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" fill="#cbd5e1">github.com/Goutamdhanani</text>
+    <text x="350" y="4" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" fill="#cbd5e1">goutamdhanani.netlify.app</text>
+  </g>
+
+  <!-- subtle glass glow -->
+  <ellipse cx="980" cy="60" rx="160" ry="40" fill="rgba(13,183,176,0.06)"/>
+
+  <!-- small tagline -->
+  <text x="86" y="240" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#94a3b8">
+    Building reliable cloud platforms, automated CI/CD pipelines and secure, scalable microservices.
+  </text>
+</svg>
