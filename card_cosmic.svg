@@ -1,0 +1,33 @@
+<!-- card_cosmic.svg
+     Compact cosmic card for section headers, project banners or social images.
+     Save as ./card_cosmic.svg and use as image in READMEs or project pages.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200" viewBox="0 0 600 200" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#04101b"/>
+      <stop offset="1" stop-color="#06232b"/>
+    </linearGradient>
+    <radialGradient id="neb" cx="10%" cy="30%" r="80%">
+      <stop offset="0" stop-color="#00cbbf" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="f" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="200" rx="12" fill="url(#bgc)"/>
+  <ellipse cx="160" cy="80" rx="200" ry="60" fill="url(#neb)" filter="url(#f)"/>
+  <g transform="translate(26,28)">
+    <rect x="0" y="0" width="548" height="144" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.04)"/>
+    <text x="22" y="44" font-family="Inter, Roboto, Arial, sans-serif" font-size="20" fill="#e9fbf6" font-weight="700">Featured Project</text>
+    <text x="22" y="74" font-family="Inter, Roboto, Arial, sans-serif" font-size="12" fill="#9fbfc0">Blockchain Time Capsule — Flask · AWS · Docker · CI/CD</text>
+  </g>
+
+  <!-- small planet accent -->
+  <g transform="translate(520,36)">
+    <circle cx="0" cy="0" r="20" fill="#c26a36" opacity="0.95"/>
+    <ellipse rx="36" ry="8" fill="rgba(255,255,255,0.06)" transform="rotate(-18)"/>
+  </g>
+</svg>
