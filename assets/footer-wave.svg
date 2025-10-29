@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3840 400" width="3840" height="400" role="img" aria-label="Footer wave">
+  <defs>
+    <linearGradient id="footerGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A0B2E"/>
+      <stop offset="50%" stop-color="#0D0322"/>
+      <stop offset="100%" stop-color="#0A0118"/>
+    </linearGradient>
+    
+    <radialGradient id="footerGlow1" cx="30%" cy="40%">
+      <stop offset="0%" stop-color="#9D4EDD" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#9D4EDD" stop-opacity="0"/>
+    </radialGradient>
+    
+    <radialGradient id="footerGlow2" cx="70%" cy="60%">
+      <stop offset="0%" stop-color="#00F5FF" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#00F5FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="3840" height="400" fill="url(#footerGrad)"/>
+  <rect width="3840" height="400" fill="url(#footerGlow1)"/>
+  <rect width="3840" height="400" fill="url(#footerGlow2)"/>
+  
+  <!-- Animated wave -->
+  <path d="M 0,200 Q 960,150 1920,200 T 3840,200 L 3840,400 L 0,400 Z" fill="rgba(157,78,221,0.1)">
+    <animate attributeName="d" values="M 0,200 Q 960,150 1920,200 T 3840,200 L 3840,400 L 0,400 Z;M 0,200 Q 960,250 1920,200 T 3840,200 L 3840,400 L 0,400 Z;M 0,200 Q 960,150 1920,200 T 3840,200 L 3840,400 L 0,400 Z" dur="8s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M 0,220 Q 960,270 1920,220 T 3840,220 L 3840,400 L 0,400 Z" fill="rgba(0,245,255,0.08)">
+    <animate attributeName="d" values="M 0,220 Q 960,270 1920,220 T 3840,220 L 3840,400 L 0,400 Z;M 0,220 Q 960,170 1920,220 T 3840,220 L 3840,400 L 0,400 Z;M 0,220 Q 960,270 1920,220 T 3840,220 L 3840,400 L 0,400 Z" dur="6s" repeatCount="indefinite"/>
+  </path>
+</svg>
