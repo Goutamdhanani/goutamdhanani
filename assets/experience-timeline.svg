@@ -1,0 +1,57 @@
+<!-- Cosmic experience & education timeline (2018–2025) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3840 600" width="3840" height="600" role="img" aria-label="Experience Timeline">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B0F1F"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="3840" height="600" fill="url(#bg)"/>
+  <rect x="0" y="0" width="3840" height="600" fill="url(#glow)"/>
+
+  <!-- Timeline line -->
+  <line x1="200" y1="320" x2="3640" y2="320" stroke="url(#line)" stroke-width="6" opacity="0.8"/>
+
+  <!-- Helper function substitute to place nodes -->
+  <!-- 2018–2020 School -->
+  <g transform="translate(400,320)">
+    <circle r="16" fill="#22D3EE"/>
+    <text x="-100" y="-60" font-family="Inter, system-ui, Segoe UI, Roboto" font-size="28" fill="#E6F4F1">2018–2020</text>
+    <text x="-220" y="-20" font-family="Inter, system-ui, Segoe UI, Roboto" font-size="30" fill="#D7EFFE">Senior Secondary (Arts)</text>
+    <text x="-220" y="20" font-family="Inter, system-ui, Segoe UI, Roboto" font-size="26" fill="#B8D8FF">84% · Govt Sr Sec School</text>
+  </g>
+
+  <!-- 2021–2024 BCA -->
+  <g transform="translate(1300,320)">
+    <circle r="16" fill="#22D3EE"/>
+    <text x="-70" y="-60" font-family="Inter, system-ui, Segoe UI, Roboto" font-size="28" fill="#E6F4F1">2021–2024</text>
+    <text x="-180" y="-20" font-family="Inter, system-ui, Segoe UI, Roboto" font-size="30" fill="#D7EFFE">BCA · Jain College</text>
+    <text x="-180" y="20" font-family="Inter, system-ui, Segoe UI, Roboto" font-size="26" fill="#B8D8FF">CGPA 8.62</text>
+  </g>
+
+  <!-- 2024 Intern -->
+  <g transform="translate(2100,320)">
+    <circle r="16" fill="#8B5CF6"/>
+    <text x="-40" y="-60" font-family="Inter, system-ui, Segoe UI, Roboto" font-size="28" fill="#E6F4F1">Jan–May 2024</text>
+    <text x="-180" y="-20" font-family="Inter, system-ui, Segoe UI, Roboto" font-size="30" fill="#D7EFFE">Intern · Riddhi Siddhi</text>
+    <text x="-180" y="20" font-family="Inter, system-ui, Segoe UI, Roboto" font-size="26" fill="#B8D8FF">Bangalore · Software components, reviews</text>
+  </g>
+
+  <!-- 2024–2025 Independent -->
+  <g transform="translate(2900,320)">
+    <circle r="16" fill="#8B5CF6"/>
+    <text x="-90" y="-60" font-family="Inter, system-ui, Segoe UI, Roboto" font-size="28" fill="#E6F4F1">Nov 2024–Jul 2025</text>
+    <text x="-240" y="-20" font-family="Inter, system-ui, Segoe UI, Roboto" font-size="30" fill="#D7EFFE">Independent Software Engineer</text>
+    <text x="-240" y="20" font-family="Inter, system-ui, Segoe UI, Roboto" font-size="26" fill="#B8D8FF">IBM DevOps Cert · DSA · Projects</text>
+  </g>
+</svg>
