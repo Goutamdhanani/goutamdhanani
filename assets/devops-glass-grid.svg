@@ -1,0 +1,93 @@
+<!-- Glassy grid of DevOps domains -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3840 1200" width="3840" height="1200" role="img" aria-label="DevOps glass grid">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0f1f"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.05"/>
+      </feComponentTransfer>
+    </filter>
+    <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.5)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.08)"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="3840" height="1200" fill="url(#bg)"/>
+  <rect width="3840" height="1200" filter="url(#grain)" opacity="0.2"/>
+
+  <!-- Grid helper -->
+  <g font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial" fill="#E6F4F1">
+    <!-- Row 1 -->
+    <g transform="translate(220,140)">
+      <!-- Card helper function simulated: each g is a card -->
+      <g>
+        <rect width="820" height="280" rx="28" fill="rgba(255,255,255,0.06)" stroke="url(#stroke)"/>
+        <text x="40" y="80" font-size="46" font-weight="700">Cloud</text>
+        <text x="40" y="150" font-size="32" fill="#D7EFFE">AWS • Azure • GCP</text>
+        <text x="40" y="200" font-size="28" fill="#B8D8FF">Multi-account, least-privilege, guardrails</text>
+      </g>
+      <g transform="translate(900,0)">
+        <rect width="820" height="280" rx="28" fill="rgba(255,255,255,0.06)" stroke="url(#stroke)"/>
+        <text x="40" y="80" font-size="46" font-weight="700">Containers</text>
+        <text x="40" y="150" font-size="32" fill="#D7EFFE">Docker • Kubernetes • Helm • Kustomize</text>
+        <text x="40" y="200" font-size="28" fill="#B8D8FF">Multi-tenant, policy, cost, scaling</text>
+      </g>
+      <g transform="translate(1780,0)">
+        <rect width="820" height="280" rx="28" fill="rgba(255,255,255,0.06)" stroke="url(#stroke)"/>
+        <text x="40" y="80" font-size="46" font-weight="700">IaC</text>
+        <text x="40" y="150" font-size="32" fill="#D7EFFE">Terraform • Pulumi • Ansible</text>
+        <text x="40" y="200" font-size="28" fill="#B8D8FF">Reproducible infra, modules, tests</text>
+      </g>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(220,460)">
+      <g>
+        <rect width="820" height="280" rx="28" fill="rgba(255,255,255,0.06)" stroke="url(#stroke)"/>
+        <text x="40" y="80" font-size="46" font-weight="700">CI/CD</text>
+        <text x="40" y="150" font-size="32" fill="#D7EFFE">GitHub Actions • Jenkins • Argo CD</text>
+        <text x="40" y="200" font-size="28" fill="#B8D8FF">Pipelines, GitOps, releases, rollbacks</text>
+      </g>
+      <g transform="translate(900,0)">
+        <rect width="820" height="280" rx="28" fill="rgba(255,255,255,0.06)" stroke="url(#stroke)"/>
+        <text x="40" y="80" font-size="46" font-weight="700">Observability</text>
+        <text x="40" y="150" font-size="32" fill="#D7EFFE">Prometheus • Grafana • ELK • OpenTelemetry</text>
+        <text x="40" y="200" font-size="28" fill="#B8D8FF">SLOs, tracing, alerts that matter</text>
+      </g>
+      <g transform="translate(1780,0)">
+        <rect width="820" height="280" rx="28" fill="rgba(255,255,255,0.06)" stroke="url(#stroke)"/>
+        <text x="40" y="80" font-size="46" font-weight="700">Security</text>
+        <text x="40" y="150" font-size="32" fill="#D7EFFE">Vault • OPA • Snyk</text>
+        <text x="40" y="200" font-size="28" fill="#B8D8FF">Secrets mgmt, policy, SBOM, scanning</text>
+      </g>
+    </g>
+
+    <!-- Row 3 -->
+    <g transform="translate(220,780)">
+      <g>
+        <rect width="820" height="280" rx="28" fill="rgba(255,255,255,0.06)" stroke="url(#stroke)"/>
+        <text x="40" y="80" font-size="46" font-weight="700">Networking</text>
+        <text x="40" y="150" font-size="32" fill="#D7EFFE">Istio/Linkerd • NGINX • Ingress/Gateway</text>
+        <text x="40" y="200" font-size="28" fill="#B8D8FF">mTLS, traffic mgmt, zero-downtime</text>
+      </g>
+      <g transform="translate(900,0)">
+        <rect width="820" height="280" rx="28" fill="rgba(255,255,255,0.06)" stroke="url(#stroke)"/>
+        <text x="40" y="80" font-size="46" font-weight="700">Languages</text>
+        <text x="40" y="150" font-size="32" fill="#D7EFFE">Bash • Python • Go</text>
+        <text x="40" y="200" font-size="28" fill="#B8D8FF">CLIs, tooling, automations</text>
+      </g>
+      <g transform="translate(1780,0)">
+        <rect width="820" height="280" rx="28" fill="rgba(255,255,255,0.06)" stroke="url(#stroke)"/>
+        <text x="40" y="80" font-size="46" font-weight="700">Datastores</text>
+        <text x="40" y="150" font-size="32" fill="#D7EFFE">PostgreSQL • Redis • Kafka</text>
+        <text x="40" y="200" font-size="28" fill="#B8D8FF">HA, backups, perf, streaming</text>
+      </g>
+    </g>
+  </g>
+</svg>
