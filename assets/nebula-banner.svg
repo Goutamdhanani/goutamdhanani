@@ -39,69 +39,51 @@
     <!-- Star field noise -->
     <filter id="starField">
       <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="42" result="stars"/>
-      <feColorMatrix in="stars" type="matrix" values="
-        0 0 0 0 1
-        0 0 0 0 1
-        0 0 0 0 1
-        0 0 0 0.08 0" />
+      <feColorMatrix in="stars" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.08 0"/>
     </filter>
 
     <!-- Larger stars -->
     <filter id="bigStars">
       <feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="2" seed="77" result="bigstars"/>
-      <feColorMatrix in="bigstars" type="matrix" values="
-        0 0 0 0 1
-        0 0 0 0 0.95
-        0 0 0 0 1
-        0 0 0 0.15 0" />
+      <feColorMatrix in="bigstars" type="matrix" values="0 0 0 0 1  0 0 0 0 0.95  0 0 0 0 1  0 0 0 0.15 0"/>
     </filter>
 
     <!-- Cosmic dust -->
     <filter id="cosmicDust">
       <feTurbulence type="fractalNoise" baseFrequency="0.3" numOctaves="4" seed="99" result="dust"/>
-      <feColorMatrix in="dust" type="matrix" values="
-        0.5 0 0 0 0.3
-        0 0.3 0 0 0.5
-        0 0 0.8 0 0.7
-        0 0 0 0.12 0" />
+      <feColorMatrix in="dust" type="matrix" values="0.5 0 0 0 0.3  0 0.3 0 0 0.5  0 0 0.8 0 0.7  0 0 0 0.12 0"/>
     </filter>
 
-    <!-- Film grain texture -->
+    <!-- Film grain -->
     <filter id="filmGrain" x="-20%" y="-20%" width="140%" height="140%">
       <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="3" stitchTiles="stitch"/>
       <feColorMatrix type="saturate" values="0"/>
-      <feComponentTransfer>
-        <feFuncA type="table" tableValues="0 0.05"/>
-      </feComponentTransfer>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.05"/></feComponentTransfer>
     </filter>
 
-    <!-- Premium glass effect -->
+    <!-- Glass effect -->
     <filter id="glassEffect" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
       <feComposite in="blur" in2="SourceAlpha" operator="over" result="comp"/>
-      <feColorMatrix in="comp" type="matrix" values="
-        1 0 0 0 0
-        0 1 0 0 0
-        0 0 1 0 0
-        0 0 0 0.92 0" result="glass"/>
+      <feColorMatrix in="comp" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.92 0" result="glass"/>
       <feBlend in="SourceGraphic" in2="glass" mode="normal"/>
     </filter>
 
-    <!-- Glass border gradient -->
+    <!-- Glass border -->
     <linearGradient id="glassBorder" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="rgba(255,255,255,0.6)"/>
       <stop offset="50%" stop-color="rgba(157,78,221,0.4)"/>
       <stop offset="100%" stop-color="rgba(0,245,255,0.3)"/>
     </linearGradient>
 
-    <!-- Orbit rings gradient -->
+    <!-- Orbit rings -->
     <linearGradient id="orbitRing" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#00F5FF" stop-opacity="0.2"/>
       <stop offset="50%" stop-color="#9D4EDD" stop-opacity="0.4"/>
       <stop offset="100%" stop-color="#FF006E" stop-opacity="0.2"/>
     </linearGradient>
 
-    <!-- Shimmer effect -->
+    <!-- Shimmer -->
     <linearGradient id="shimmer" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
       <stop offset="50%" stop-color="rgba(255,255,255,0.15)"/>
@@ -111,16 +93,12 @@
     </linearGradient>
   </defs>
 
-  <!-- Deep space background -->
+  <!-- Background layers -->
   <rect width="3840" height="1200" fill="url(#deepSpace)"/>
-
-  <!-- Nebula layers -->
   <rect width="3840" height="1200" fill="url(#nebula1)"/>
   <rect width="3840" height="1200" fill="url(#nebula2)"/>
   <rect width="3840" height="1200" fill="url(#nebula3)"/>
   <rect width="3840" height="1200" fill="url(#nebula4)"/>
-
-  <!-- Cosmic dust and texture -->
   <rect width="3840" height="1200" filter="url(#cosmicDust)" opacity="0.35"/>
   <rect width="3840" height="1200" filter="url(#starField)" opacity="0.75"/>
   <rect width="3840" height="1200" filter="url(#bigStars)" opacity="0.85"/>
@@ -130,15 +108,12 @@
   <g opacity="0.4">
     <ellipse cx="1920" cy="600" rx="1600" ry="450" fill="none" stroke="url(#orbitRing)" stroke-width="2.5">
       <animate attributeName="rx" values="1600;1650;1600" dur="8s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="8s" repeatCount="indefinite"/>
     </ellipse>
     <ellipse cx="1920" cy="600" rx="1200" ry="350" fill="none" stroke="url(#orbitRing)" stroke-width="2">
       <animate attributeName="rx" values="1200;1240;1200" dur="6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="6s" repeatCount="indefinite"/>
     </ellipse>
     <ellipse cx="1920" cy="600" rx="1850" ry="550" fill="none" stroke="url(#orbitRing)" stroke-width="1.5">
       <animate attributeName="rx" values="1850;1900;1850" dur="10s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="10s" repeatCount="indefinite"/>
     </ellipse>
   </g>
 
@@ -146,126 +121,60 @@
   <g opacity="0.6">
     <circle cx="580" cy="220" r="4" fill="#00F5FF">
       <animate attributeName="cy" values="220;200;220" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
     </circle>
     <circle cx="3100" cy="380" r="5" fill="#9D4EDD">
       <animate attributeName="cy" values="380;400;380" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" repeatCount="indefinite"/>
     </circle>
     <circle cx="2400" cy="880" r="3.5" fill="#FF006E">
       <animate attributeName="cy" values="880;860;880" dur="4.5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.6;1;0.6" dur="4.5s" repeatCount="indefinite"/>
     </circle>
     <circle cx="1200" cy="950" r="4.5" fill="#4CC9F0">
       <animate attributeName="cy" values="950;970;950" dur="6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="6s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <!-- Premium Glass Hero Panel -->
+  <!-- Glass hero panel -->
   <g transform="translate(320, 280)">
-    <!-- Main glass card -->
-    <rect x="0" y="0" rx="48" ry="48" width="3200" height="640"
-          fill="rgba(255,255,255,0.05)" 
-          stroke="url(#glassBorder)" 
-          stroke-width="2"
-          filter="url(#glassEffect)">
-      <animate attributeName="fill" 
-               values="rgba(255,255,255,0.05);rgba(255,255,255,0.08);rgba(255,255,255,0.05)" 
-               dur="4s" 
-               repeatCount="indefinite"/>
+    <rect x="0" y="0" rx="48" ry="48" width="3200" height="640" fill="rgba(255,255,255,0.05)" stroke="url(#glassBorder)" stroke-width="2" filter="url(#glassEffect)">
+      <animate attributeName="fill" values="rgba(255,255,255,0.05);rgba(255,255,255,0.08);rgba(255,255,255,0.05)" dur="4s" repeatCount="indefinite"/>
     </rect>
 
-    <!-- Inner glow accents -->
+    <!-- Inner glows -->
     <circle cx="2920" cy="140" r="200" fill="#00F5FF" opacity="0.22">
       <animate attributeName="r" values="200;220;200" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.22;0.35;0.22" dur="5s" repeatCount="indefinite"/>
     </circle>
     <circle cx="780" cy="500" r="240" fill="#9D4EDD" opacity="0.2">
       <animate attributeName="r" values="240;260;240" dur="6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.2;0.3;0.2" dur="6s" repeatCount="indefinite"/>
     </circle>
     <circle cx="2200" cy="520" r="180" fill="#FF006E" opacity="0.18">
       <animate attributeName="r" values="180;200;180" dur="5.5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.18;0.28;0.18" dur="5.5s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Shimmer overlay -->
     <rect x="0" y="0" rx="48" ry="48" width="3200" height="640" fill="url(#shimmer)" opacity="0.3"/>
 
-    <!-- Content Container -->
-    <g font-family="'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', Arial, sans-serif">
-      
-      <!-- Main Title -->
-      <text x="140" y="200" 
-            font-size="110" 
-            font-weight="800" 
-            letter-spacing="1" 
-            fill="#FFFFFF"
-            style="text-shadow: 0 0 40px rgba(157,78,221,0.6), 0 0 80px rgba(0,245,255,0.4);">
-        GOUTAM KUMAR
-      </text>
+    <!-- Content -->
+    <g font-family="'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif">
+      <text x="140" y="200" font-size="110" font-weight="800" letter-spacing="1" fill="#FFFFFF" style="text-shadow: 0 0 40px rgba(157,78,221,0.6), 0 0 80px rgba(0,245,255,0.4);">GOUTAM KUMAR</text>
+      <text x="140" y="310" font-size="56" font-weight="600" letter-spacing="0.5" fill="#E0E7FF" opacity="0.95">DevOps Engineer • Cloud Architect • Software Engineer</text>
+      <text x="140" y="400" font-size="38" font-weight="500" letter-spacing="0.3" fill="#C7D2FE" opacity="0.9">AWS • Docker • Kubernetes • Python • CI/CD • Jenkins • GitHub Actions • Terraform</text>
 
-      <!-- Subtitle -->
-      <text x="140" y="310" 
-            font-size="56" 
-            font-weight="600" 
-            letter-spacing="0.5" 
-            fill="#E0E7FF"
-            opacity="0.95">
-        DevOps Engineer • Cloud Architect • Software Engineer
-      </text>
-
-      <!-- Tech stack description -->
-      <text x="140" y="400" 
-            font-size="38" 
-            font-weight="500" 
-            letter-spacing="0.3" 
-            fill="#C7D2FE"
-            opacity="0.9">
-        AWS • Docker • Kubernetes • Python • CI/CD • Jenkins • GitHub Actions • Terraform
-      </text>
-
-      <!-- Professional badges -->
+      <!-- Badges -->
       <g font-size="30" font-weight="600" letter-spacing="0.5">
-        <!-- Badge 1: DevOps Excellence -->
         <g transform="translate(140, 480)">
-          <rect x="0" y="-36" rx="20" ry="20" width="420" height="72" 
-                fill="rgba(157,78,221,0.15)" 
-                stroke="rgba(157,78,221,0.5)" 
-                stroke-width="1.5">
-            <animate attributeName="fill" 
-                     values="rgba(157,78,221,0.15);rgba(157,78,221,0.25);rgba(157,78,221,0.15)" 
-                     dur="3s" 
-                     repeatCount="indefinite"/>
+          <rect x="0" y="-36" rx="20" ry="20" width="420" height="72" fill="rgba(157,78,221,0.15)" stroke="rgba(157,78,221,0.5)" stroke-width="1.5">
+            <animate attributeName="fill" values="rgba(157,78,221,0.15);rgba(157,78,221,0.25);rgba(157,78,221,0.15)" dur="3s" repeatCount="indefinite"/>
           </rect>
           <text x="30" y="8" fill="#F0E7FF">⚙️ DevOps Excellence</text>
         </g>
-
-        <!-- Badge 2: Cloud Native -->
         <g transform="translate(600, 480)">
-          <rect x="0" y="-36" rx="20" ry="20" width="360" height="72" 
-                fill="rgba(0,245,255,0.15)" 
-                stroke="rgba(0,245,255,0.5)" 
-                stroke-width="1.5">
-            <animate attributeName="fill" 
-                     values="rgba(0,245,255,0.15);rgba(0,245,255,0.25);rgba(0,245,255,0.15)" 
-                     dur="3.5s" 
-                     repeatCount="indefinite"/>
+          <rect x="0" y="-36" rx="20" ry="20" width="360" height="72" fill="rgba(0,245,255,0.15)" stroke="rgba(0,245,255,0.5)" stroke-width="1.5">
+            <animate attributeName="fill" values="rgba(0,245,255,0.15);rgba(0,245,255,0.25);rgba(0,245,255,0.15)" dur="3.5s" repeatCount="indefinite"/>
           </rect>
           <text x="30" y="8" fill="#E0F7FF">☁️ Cloud Native</text>
         </g>
-
-        <!-- Badge 3: Automation Expert -->
         <g transform="translate(1000, 480)">
-          <rect x="0" y="-36" rx="20" ry="20" width="450" height="72" 
-                fill="rgba(255,0,110,0.15)" 
-                stroke="rgba(255,0,110,0.5)" 
-                stroke-width="1.5">
-            <animate attributeName="fill" 
-                     values="rgba(255,0,110,0.15);rgba(255,0,110,0.25);rgba(255,0,110,0.15)" 
-                     dur="4s" 
-                     repeatCount="indefinite"/>
+          <rect x="0" y="-36" rx="20" ry="20" width="450" height="72" fill="rgba(255,0,110,0.15)" stroke="rgba(255,0,110,0.5)" stroke-width="1.5">
+            <animate attributeName="fill" values="rgba(255,0,110,0.15);rgba(255,0,110,0.25);rgba(255,0,110,0.15)" dur="4s" repeatCount="indefinite"/>
           </rect>
           <text x="30" y="8" fill="#FFE0F0">🤖 Automation Expert</text>
         </g>
@@ -273,7 +182,7 @@
     </g>
   </g>
 
-  <!-- Accent corner elements -->
+  <!-- Corner accents -->
   <g opacity="0.4">
     <circle cx="180" cy="120" r="80" fill="none" stroke="#00F5FF" stroke-width="2"/>
     <circle cx="180" cy="120" r="60" fill="none" stroke="#9D4EDD" stroke-width="1.5"/>
